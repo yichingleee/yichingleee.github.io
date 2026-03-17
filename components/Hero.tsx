@@ -1,55 +1,101 @@
 import React from 'react';
-import { ArrowDown, Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, GraduationCap } from 'lucide-react';
 
 interface HeroProps {
   onExplore: () => void;
 }
 
 const Hero: React.FC<HeroProps> = ({ onExplore }) => {
+  const profileImageUrl = new URL('../assets/profile_pic.jpeg', import.meta.url).href;
+
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 relative pt-20 pb-20">
-      <div className="max-w-4xl w-full mx-auto text-center space-y-8 z-10">
-        
-        <div className="inline-block animate-fade-in-up">
-          <span className="px-3 py-1 rounded-full border border-indigo-200 bg-indigo-50/50 text-indigo-600 text-xs font-medium tracking-wide uppercase backdrop-blur-sm">
-            Ph.D. Candidate @ Stanford
-          </span>
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight leading-tight">
-          Designing the <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-            Future of Interaction
-          </span>
+    <div className="hero-grid">
+      <div className="hero-copy">
+        <p className="hero-eyebrow reveal" style={{ '--delay': '0.05s' } as React.CSSProperties}>
+          Interactive Intelligence for Healthcare
+        </p>
+        <h1 className="hero-title reveal" style={{ '--delay': '0.12s' } as React.CSSProperties}>
+          Yi-Ching Lee
         </h1>
-
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
-          I'm Alex Chen. I research <span className="font-semibold text-slate-800">Human-AI Collaboration</span> and build tools that make complex machine learning models interpretable and accessible.
+        <p className="hero-subtitle reveal" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+          Physician-researcher crafting trustworthy multimodal systems and clinical interfaces
+          that transform how care teams interpret data.
         </p>
 
-        <div className="flex items-center justify-center gap-4 pt-4">
-          <a href="#" className="p-3 text-slate-500 hover:text-indigo-600 hover:bg-white/80 rounded-full transition-all border border-transparent hover:border-indigo-100 hover:shadow-lg">
-            <Github size={24} />
+        <div className="hero-actions reveal" style={{ '--delay': '0.28s' } as React.CSSProperties}>
+          <button className="btn btn-primary" onClick={onExplore} type="button">
+            Explore Research
+          </button>
+          <a className="btn btn-ghost" href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+            Download CV
           </a>
-          <a href="#" className="p-3 text-slate-500 hover:text-sky-500 hover:bg-white/80 rounded-full transition-all border border-transparent hover:border-sky-100 hover:shadow-lg">
-            <Twitter size={24} />
+        </div>
+
+        <div className="hero-meta">
+          <div className="meta-block reveal" style={{ '--delay': '0.34s' } as React.CSSProperties}>
+            <span className="meta-label">Research</span>
+            <span className="meta-value">HCI + Clinical AI</span>
+          </div>
+          <div className="meta-block reveal" style={{ '--delay': '0.4s' } as React.CSSProperties}>
+            <span className="meta-label">Focus</span>
+            <span className="meta-value">Multimodal ML, CV</span>
+          </div>
+          <div className="meta-block reveal" style={{ '--delay': '0.46s' } as React.CSSProperties}>
+            <span className="meta-label">Now</span>
+            <span className="meta-value">Clinical systems pilots</span>
+          </div>
+        </div>
+
+        <div className="hero-links reveal" style={{ '--delay': '0.52s' } as React.CSSProperties}>
+          <a className="hero-link" href="mailto:jimmy890302@gmail.com" aria-label="Email">
+            <Mail size={18} aria-hidden="true" focusable="false" />
           </a>
-          <a href="#" className="p-3 text-slate-500 hover:text-blue-700 hover:bg-white/80 rounded-full transition-all border border-transparent hover:border-blue-100 hover:shadow-lg">
-            <Linkedin size={24} />
+          <a
+            className="hero-link"
+            href="https://www.linkedin.com/in/yi-ching-lee-9b219a284/"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={18} aria-hidden="true" focusable="false" />
+          </a>
+          <a className="hero-link" href="https://www.instagram.com/j0302lee/" aria-label="Instagram">
+            <Instagram size={18} aria-hidden="true" focusable="false" />
+          </a>
+          <a className="hero-link" href="https://github.com/yichingleee" aria-label="GitHub">
+            <Github size={18} aria-hidden="true" focusable="false" />
+          </a>
+          <a className="hero-link" href="#" aria-label="Google Scholar">
+            <GraduationCap size={18} aria-hidden="true" focusable="false" />
           </a>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow z-10">
-        <button 
-          onClick={onExplore}
-          className="flex flex-col items-center gap-2 text-slate-400 hover:text-indigo-600 transition-colors"
-        >
-          <span className="text-xs uppercase tracking-widest opacity-70">Explore Research</span>
-          <ArrowDown size={20} />
-        </button>
+      <div className="hero-panel reveal" style={{ '--delay': '0.2s' } as React.CSSProperties}>
+        <div className="hero-photo-slot" aria-label="Portrait">
+          <img src={profileImageUrl} alt="Yi-Ching Lee portrait" width={723} height={1086} />
+        </div>
+        <div className="panel-card">
+          <span className="panel-kicker">01</span>
+          <h3 className="panel-title">Clinical Interface Design</h3>
+          <p className="panel-text">
+            Designing workflows that connect model insight with real-time clinical decisions.
+          </p>
+        </div>
+        <div className="panel-card">
+          <span className="panel-kicker">02</span>
+          <h3 className="panel-title">Multimodal Diagnostics</h3>
+          <p className="panel-text">
+            Fusing imaging, text, and signals to surface transparent medical predictions.
+          </p>
+        </div>
+        <div className="panel-card">
+          <span className="panel-kicker">03</span>
+          <h3 className="panel-title">Trust + Evaluation</h3>
+          <p className="panel-text">
+            Auditing model reliability with clinician-in-the-loop studies and pilots.
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
