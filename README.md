@@ -1,9 +1,8 @@
-# yichinglee.github.io
+# yichingleee.github.io
 
 Personal portfolio website for Yi-Ching Lee, a CS PhD student researching interactive intelligence for healthcare.
 
-Current project-site URL: `https://yichingleee.github.io/yichinglee.github.io/`
-Target root-site URL after migration: `https://yichingleee.github.io/`
+Site URL: `https://yichingleee.github.io/`
 
 ## Stack
 
@@ -42,8 +41,7 @@ The Vite base path is inferred automatically from `GITHUB_REPOSITORY`:
 
 You can override this manually with `VITE_BASE_PATH=/custom-path/ npm run build`.
 
-## Migration To Root Pages Repo
+## GitHub Pages
 
-1. Push this codebase to `yichingleee/yichingleee.github.io`.
-2. Keep the existing GitHub Actions Pages workflow.
-3. After the first successful deploy, the site will resolve at `https://yichingleee.github.io/`.
+This repository is the root GitHub Pages repository for the `yichingleee` account.
+The included workflow builds the Vite app and deploys it to `https://yichingleee.github.io/`.
